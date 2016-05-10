@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+</head>
+<body>
+{% for i in data %}
+
+<form method="post" action = {{url_for('.next_question')}}>
+Question : {{i.question}}
+
+<br>    <input type="radio" name="answer" value="1">
+ {{i.option_one}}<br>
+<input type="radio" name="answer" value="2"> {{i.option_two}}<br>
+<input type="radio" name="answer" value="3"> {{i.option_three}}<br>
+<input type="radio" name="answer" value="3"> {{i.option_four}}<br>
+<input type="hidden" value="{{i.aid}}" name="question">
+    <input type="submit" value="next">
+ </form>
+{% endfor %}
+
+</body>
+</html>
